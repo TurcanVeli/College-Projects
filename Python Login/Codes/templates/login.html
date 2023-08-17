@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <h1>Welcome!</h1>
+<style>
+    body {
+  background-color: rgb(186, 14, 152);
+}
+form{
+ text-align: center;
+}
+
+
+h2{
+    color: red;
+  text-align: center;
+}
+h1{
+    color: black;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+<div>
+    <form action="" method="post">
+      <label>EMAIL</label> <br>
+        <input name="username" type = "email" placeholder="write your username"><br><br>
+         <label>PASSWORD</label> <br>
+        <input name="password" type = "password" placeholder="write your password"><br><br>
+        <input type="submit" VALUE="LOGIN"><br><br>
+    </form>
+    <form action="/new">
+        <label> ARE YOU NEW?</label>
+        <input value="Register" type = "submit">
+    </form>
+
+
+
+
+</div>
+
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <h2>{{ message }}</h2>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+
+
+
+</body>
+</html>
